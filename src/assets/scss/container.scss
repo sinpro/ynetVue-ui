@@ -9,4 +9,11 @@
 	    flex-grow: 1;
 	    overflow-x: hidden;
     }
+    .main{
+        padding-bottom: 10px;
+        margin-left: 200px;
+        background-color: #eff0f4;
+        flex: 1;
+        min-width: 0;
+    }
 }

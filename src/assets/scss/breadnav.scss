@@ -1,0 +1,36 @@
+.ynet-breadnav {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #cfd8dc;
+    padding: .75rem 1rem;
+    list-style: none;
+    background-color: #fff;
+    &::after {
+	    display: block;
+	    clear: both;
+	    content: "";
+	}
+    .ynet-breadnav-item{
+    	float: left;
+    	a {
+		    color: #2d8cf0;
+		    background: 0 0;
+		    text-decoration: none;
+		    outline: 0;
+		    cursor: pointer;
+		    -webkit-transition: color .2s ease;
+		    transition: color .2s ease;
+		}
+    	&::before {
+		    display: inline-block;
+		    padding-right: .5rem;
+		    padding-left: .5rem;
+		    color: #b0bec5;
+		    content: "/";
+		}
+		&::after {
+		    display: block;
+		    clear: both;
+		    content: "";
+		}
+    }
+}

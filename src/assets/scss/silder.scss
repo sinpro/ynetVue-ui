@@ -8,4 +8,27 @@
     overflow: hidden;
     color: #fff;
     background: #0d5477;
+    .ynet-silder-sidebar{
+    	height: calc(100vh - 80px);
+    	position: relative;
+	    overflow-x: hidden;
+	    overflow-y: auto;
+	    -ms-overflow-style: -ms-autohiding-scrollbar;
+	    width: 200px;
+	    .ynet-silder-nav{
+	    	width: 200px;
+    		flex-direction: column !important;
+    		display: flex;
+		    flex-wrap: wrap;
+		    padding-left: 0;
+		    margin-bottom: 0;
+		    list-style: none;
+		    li{
+		    	position: relative;
+			    margin: 0;
+			    transition: background .3s ease-in-out;
+			    border-bottom: 1px solid #fff;
+		    }
+	    }
+    }
 }

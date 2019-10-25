@@ -2,46 +2,46 @@
   <div class="ynet-silder">
     <nav class="ynet-silder-sidebar">
       <ul class="ynet-silder-nav">
-        <div v-for="(item,index) in routes" :key="index">
+        <div v-for="(route,i) in routes" :key="i">
           <router-link 
             tag="li" class="ynet-silder-nav-item nav-dropdown"
             v-if="
-              !item.hidden&&
-              item.children&&
-              item.children.length>0"
+              !route.hidden&&
+              route.children&&
+              route.children.length>0"
             :to="
-              item.path+''+
-              item.children[0].path" disabled>
-              <div class="nav-link nav-dropdown-toggle" @click="handleClick">
-                  <!-- <Icon :type="item.icon" color="white"/> -->
-                  <span :type="child.icon" color="white">></span>{{ item.name}}
+              route.path+''+
+              route.children[0].path" disabled>
+              <div class="ynet-silder-nav-link nav-dropdown-toggle" @click="handleClick">
+                  <!-- <Icon :type="route.icon" color="white"/> -->
+                  {{ route.name}}
               </div>
-              <ul class="nav-dropdown-items">
+              <ul class="ynet-silder-nav-dropdown">
                 <li class="ynet-silder-nav-item" 
-                  v-for="child in item.children" 
+                  v-for="(child,j) in route.children" :key="j"
                   v-if='!child.hidden' 
                   @click="addActive">
                     <router-link 
-                      :to="item.path+'/'+child.path+'/'+child.children[0].path" 
-                      class="nav-link"
+                      :to="route.path+'/'+child.path+'/'+child.children[0].path" 
+                      class="ynet-silder-nav-link"
                       v-if="!child.hidden&&child.children">
                         <!-- <Icon :type="child.icon" color="white"/> -->
-                        <span :type="child.icon" color="white">></span>{{ child.name}}
+                        {{ child.name}}
                     </router-link>
                     <router-link 
-                      :to="item.path+'/'+child.path" 
-                      class="nav-link" 
+                      :to="route.path+'/'+child.path" 
+                      class="ynet-silder-nav-link" 
                       v-else="!child.children">
                         <!-- <Icon :type="child.icon" color="white"/> -->
-                        <span :type="child.icon" color="white">></span>{{ child.name}}
+                        {{ child.name}}
                     </router-link>
                 </li>
               </ul>
           </router-link>
-          <li class="ynet-silder-nav-item" v-if="!item.hidden&&!item.children">
-            <router-link :to="item.path" class="nav-link" exact>
-              <!-- <Icon :type="item.icon" color="white"/> -->
-                {{ item.name}}
+          <li class="ynet-silder-nav-item" v-if="!route.hidden&&!route.children">
+            <router-link :to="route.path" class="ynet-silder-nav-link" exact>
+              <!-- <Icon :type="route.icon" color="white"/> -->
+                {{ route.name}}
             </router-link>
           </li>
         </div>

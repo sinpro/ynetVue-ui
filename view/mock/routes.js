@@ -1,4 +1,4 @@
-[{
+const routes=[{
 	"path": "/home",
 	"name": "ppe主页",
 	"icon": "home",
@@ -303,3 +303,4 @@
 		"beforeDestroy": [null]
 	}
 }]
+export default routes

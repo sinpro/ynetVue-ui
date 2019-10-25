@@ -15,12 +15,13 @@
 </template>
 
 <script>
-  import routes from '../../../view/mock/routes.js';
+import Routes from '../../../view/mock/routes.js';
 export default {
   name: 'Container',
   display: 'Container内容',
   created(){
-    console.log(routes)
+    console.log(Routes)
+    this.routes=Routes;
   },
   data () {
     return {

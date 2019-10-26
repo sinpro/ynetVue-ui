@@ -2,52 +2,98 @@
   <div class="ynet-silder">
     <nav class="ynet-silder-sidebar">
       <ul class="ynet-silder-nav">
-        <div v-for="(route,i) in routes" :key="i">
-          <router-link 
-            tag="li" class="ynet-silder-nav-item nav-dropdown"
-            v-if="
-              !route.hidden&&
-              route.children&&
-              route.children.length>0"
-            :to="
-              route.path+''+
-              route.children[0].path" disabled>
-              <div class="ynet-silder-nav-link nav-dropdown-toggle" @click="handleClick">
-                  <!-- <Icon :type="route.icon" color="white"/> -->
-                  {{ route.name}}
-              </div>
-              <ul class="ynet-silder-nav-dropdown">
-                <li class="ynet-silder-nav-item" 
-                  v-for="(child,j) in route.children" :key="j"
-                  v-if='!child.hidden' 
-                  @click="addActive">
-                    <router-link 
-                      :to="route.path+'/'+child.path+'/'+child.children[0].path" 
-                      class="ynet-silder-nav-link"
-                      v-if="!child.hidden&&child.children">
-                        <!-- <Icon :type="child.icon" color="white"/> -->
-                        {{ child.name}}
-                    </router-link>
-                    <router-link 
-                      :to="route.path+'/'+child.path" 
-                      class="ynet-silder-nav-link" 
-                      v-else="!child.children">
-                        <!-- <Icon :type="child.icon" color="white"/> -->
-                        {{ child.name}}
-                    </router-link>
-                </li>
-              </ul>
-          </router-link>
-          <li class="ynet-silder-nav-item" v-if="!route.hidden&&!route.children">
-            <router-link :to="route.path" class="ynet-silder-nav-link" exact>
-              <!-- <Icon :type="route.icon" color="white"/> -->
-                {{ route.name}}
+        <template v-for="(itemPar,p) in routes">
+          <li class="ynet-silder-nav-item" 
+            v-if="!itemPar.hidden&&!itemPar.children"
+          >
+            <router-link 
+              :to="itemPar.path" 
+              :class="['ynet-silder-nav-link',itemPar.children?'ynet-silder-nav-link-toggle':'']" exact
+            >
+              <span class="ynet-silder-icon">1!</span>
+              <!-- <Icon :type="itemPar.icon" color="white"/> -->
+                {{ itemPar.name}}
             </router-link>
           </li>
-        </div>
+          <router-link
+            :class="[p==currentPar?'open':'','ynet-silder-nav-item']"
+            :to="itemPar.path+''+itemPar.children[0].path"
+            v-if="!itemPar.hidden&&itemPar.children"
+            disabled tag="li"
+          >
+              <div 
+                :class="['ynet-silder-nav-link ynet-silder-link-par',itemPar.children?'ynet-silder-nav-link-toggle':'']" 
+                @click="addParActive(p,$event)"
+              >
+                  <!-- <Icon :type="itemPar.icon" color="white"/> -->
+                  <span class="ynet-silder-icon">@2</span>
+                  {{ itemPar.name}}
+              </div>
+              <ul class="ynet-silder-nav-dropdown">
+                <template v-for="(itemChi,c) in itemPar.children">
+                  <li class="ynet-silder-nav-item" 
+                    v-if="!itemChi.hidden&&!itemChi.children"
+                  >
+                    <router-link 
+                      :to="itemPar.path+'/'+itemChi.path" 
+                      :class="['ynet-silder-nav-link',itemChi.children?'ynet-silder-nav-link-toggle':'']" exact
+                    >
+                      <span class="ynet-silder-icon">#3</span>
+                      <!-- <Icon :type="itemChi.icon" color="white"/> -->{{itemChi.name}}
+                    </router-link>
+                  </li>
+                  <router-link 
+                    :class="[c==currentChi?'open':'','ynet-silder-nav-item']"
+                    :to="itemChi.path+''+itemChi.children[0].path"  
+                    tag="li" disabled
+                    v-if="!itemChi.hidden&&itemChi.children"
+                  >
+                    <div 
+                      :class="['ynet-silder-nav-link ynet-silder-link-chi',itemChi.children?'ynet-silder-nav-link-toggle':'']" 
+                      @click="addChiActive(c,$event)">
+                      <span class="ynet-silder-icon">$4</span>
+                      <!-- <Icon :type="itemChi.icon"/> -->{{ itemChi.name}}
+                    </div>
+                    <ul class="ynet-silder-nav-dropdown">
+                      <template v-for="(itemGro,g) in itemChi.children">
+                        <li class="ynet-silder-nav-item" 
+                          v-if="!itemGro.hidden&&!itemGro.children"
+                        >
+                          <router-link 
+                            :to="itemPar.path+'/'+itemChi.path+'/'+itemGro.path" 
+                            :class="['ynet-silder-nav-link',itemGro.children?'ynet-silder-nav-link-toggle':'']" exact
+                          >
+                            <span class="ynet-silder-icon">#5</span>
+                            <!-- <Icon :type="itemChi.icon" color="white"/> -->{{itemGro.name}}
+                          </router-link>
+                        </li>
+                        <router-link 
+                          :class="[g==currentGro?'open':'','ynet-silder-nav-item']"
+                          :to="itemGro.path+''+itemGro.children[0].path"  
+                          tag="li" disabled
+                          v-if="!itemGro.hidden&&itemGro.children"
+                        >
+                          <div 
+                            :class="['ynet-silder-nav-link ynet-silder-link-gro',itemGro.children?'ynet-silder-nav-link-toggle':'']" 
+                            @click="addChiActive(c,$event)">
+                            <span class="ynet-silder-icon">^6</span>
+                            <!-- <Icon :type="itemChi.icon"/> -->{{ itemGro.name}}
+                          </div>
+                          <ul class="ynet-silder-nav-dropdown">
+                            <template>
+                              四级菜单
+                            </template>
+                          </ul> 
+                        </router-link>
+                      </template>               
+                    </ul>
+                  </router-link>
+                </template>
+              </ul>
+          </router-link>
+        </template>
       </ul>
     </nav>
-    
   </div>
 </template>
 
@@ -57,7 +103,9 @@ export default {
   display: 'Silder侧边',
   data () {
     return {
-      preCls: 'ynet-Silder'
+      preCls: 'ynet-Silder',
+      currentPar:0,
+      currentChi:10,
     }
   },
   props: {
@@ -66,17 +114,20 @@ export default {
       }
   },
   methods: {
-    handleClick(e) {
-        e.preventDefault()
-        /*e.target.parentElement.classList.toggle('open')*/
-        let eOneself = e.target.parentElement;
-        eOneself.className.indexOf('open') > 0 ? $(eOneself).removeClass('open') : $(eOneself).addClass('open').siblings().removeClass('open');
+    addParActive(i,e) {
+      e.preventDefault()
+      this.currentPar=i;
+      if((e.target.className).indexOf("ynet-silder-link-par") != -1){
+        e.target.parentElement.classList.toggle('open')
+      }
+      
     },
-    addActive(e) {
-        e.preventDefault()
-        e.target.parentElement.parentElement.parentElement.classList.add('open')
-        let eTwoself=e.target.parentElement.parentElement.parentElement;
-        $(eTwoself).siblings('li').removeClass('open');
+    addChiActive(i,e) {
+      e.preventDefault()
+      this.currentChi=i;
+      if((e.target.className).indexOf("ynet-silder-link-chi") != -1){
+        e.target.parentElement.classList.toggle('open')
+      }
     }
   }
 }

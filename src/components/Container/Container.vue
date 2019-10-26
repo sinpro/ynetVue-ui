@@ -20,7 +20,7 @@ export default {
   name: 'Container',
   display: 'Container内容',
   created(){
-    console.log(Routes)
+    //console.log(Routes)
     this.routes=Routes;
   },
   data () {

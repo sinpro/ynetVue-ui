@@ -1,16 +1,18 @@
 .ynet-silder{
 	position: fixed;
-    width: 200px;
+    width: 180px;
     height: 100%;
-    flex: 0 0 200px;
+    flex: 0 0 180px;
     order: -1;
     padding: 0;
-    overflow: hidden;
+    overflow-x: hidden;
+	overflow-y: auto;
     color: #fff;
     background: #0d5477;
+    transition: margin-left .25s, margin-right .25s, width .25s, flex .25s;
     .ynet-silder-sidebar{
     	height: calc(100vh - 80px);
-    	width: 200px;
+    	width: 180px;
     	position: relative;
 	    overflow-x: hidden;
 	    overflow-y: auto;
@@ -31,7 +33,7 @@
 		      background: rgba(0,0,0,0.1);
 		}
 	    .ynet-silder-nav{
-	    	width: 200px;
+	    	width: 180px;
     		flex-direction: column !important;
     		display: flex;
 		    flex-wrap: wrap;
@@ -41,8 +43,10 @@
 		    .ynet-silder-nav-item{
 		    	position: relative;
 			    margin: 0;
-			    transition: background .3s ease-in-out;
 			    border-bottom: 1px solid #fff;
+			    &:hover{
+			    	cursor: pointer;
+			    }
 			    .ynet-silder-nav-link{
 		    	    display: block;
 				    padding: 1rem .7rem;
@@ -50,19 +54,33 @@
 				    font-weight: 500;
 				    text-decoration: none;
 				    background: 0 0;
-				    &::before{
-				    	    position: absolute;
-						    top: .96875rem;
-						    right: 1rem;
-						    display: block;
-						    width: .875rem;
-						    height: .875rem;
-						    padding: 0;
-						    font-size: 1.875rem;
-						    line-height: .85625rem;
-						    text-align: center;
-						    content: "\2039";
-						    transition: .3s;
+				     overflow:hidden;
+				    &:hover{
+				    	cursor: pointer;
+				    	background:#ccc;
+				    }
+				    .ynet-silder-icon{
+				    	color:red;
+				    	width: 20px;
+					    margin: 0 .5rem 0 0;
+					    font-size: 16px;
+					    text-align: center;
+				    }
+			    }
+			    .ynet-silder-nav-link-toggle{
+			    	&::before{
+			    	    position: absolute;
+					    top: .96875rem;
+					    right: 1rem;
+					    display: block;
+					    width: .875rem;
+					    height: .875rem;
+					    padding: 0;
+					    font-size: 1.875rem;
+					    line-height: .85625rem;
+					    text-align: center;
+					    content: "\2039";
+					    transition: .3s;
 				    }
 			    }
 			    .ynet-silder-nav-dropdown{
@@ -70,9 +88,29 @@
 				    padding: 0;
 				    margin: 0;
 				    overflow-y: hidden;
-				    transition: max-height .3s ease-in-out;
+				    background: rgba(0, 0, 0, .2);
+				    li{
+				    	padding-left: 2.3rem;
+				    	border-bottom:none;
+				    }
 			    }
 		    }
+		    .open{
+		    	&>.ynet-silder-nav-link{
+		    		&::before{
+		    			transform: rotate(-90deg)
+		    		}
+		    	}
+		    	&>.ynet-silder-nav-dropdown{
+			    	max-height: 1000px;
+			    }
+			    &.active{background: #20a8d8;}
+			    &>.ynet-silder-nav-link:hover{
+		    		background:pink;
+		    	}
+
+		    }
+		    
 	    }
     }
 }

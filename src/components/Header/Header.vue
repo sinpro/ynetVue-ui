@@ -1,7 +1,8 @@
 <template>
   <div class="ynet-header">
     <div>
-      <button @click="sidebarToggle" style="position: fixed;left: 200px;top: 30px;">导航缩进</button>
+      <a href="https://github.com/sinpro/vue-ui.git" class="logopic"><img :src="logoPic"></a>
+      <button @click="sidebarToggle" style="position: fixed;left: 180px;top: 30px;">导航缩进</button>
     </div>
   </div>
 </template>
@@ -15,9 +16,11 @@ export default {
       preCls: 'ynet-header'
     }
   },
+  props: {
+    logoPic: String,
+  },
   methods: {
     sidebarToggle (e) {
-      console.log(document.body.className)
       e.preventDefault()
       document.body.classList.toggle('sidebar-minimized')
     },

@@ -1,116 +1,258 @@
-.ynet-silder{
-	position: fixed;
+.ynet-silder {
+  position: fixed;
+  width: 180px;
+  height: 100%;
+  flex: 0 0 180px;
+  order: -1;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  color: #fff;
+  background: $sliderBgClor;
+  transition: $transition;
+  .ynet-silder-sidebar {
+    height: calc(100vh - 80px);
     width: 180px;
-    height: 100%;
-    flex: 0 0 180px;
-    order: -1;
-    padding: 0;
+    position: relative;
     overflow-x: hidden;
-	overflow-y: auto;
-    color: #fff;
-    background: #0d5477;
-    transition: margin-left .25s, margin-right .25s, width .25s, flex .25s;
-    .ynet-silder-sidebar{
-    	height: calc(100vh - 80px);
-    	width: 180px;
-    	position: relative;
-	    overflow-x: hidden;
-	    overflow-y: auto;
-	    -ms-overflow-style: -ms-autohiding-scrollbar;
-	    &::-webkit-scrollbar {/*滚动条整体样式*/
-		      width: 4px;     /*高宽分别对应横竖滚动条的尺寸*/
-		      height: 4px;
-		}
-		&::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
-		      border-radius: 5px;
-		      -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
-		      //background: rgba(123,123,123,0.2);
-		      background: rgba(18,150,219,.5)
-		}
-		&::-webkit-scrollbar-track {/*滚动条里面轨道*/
-		      -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
-		      border-radius: 0;
-		      background: rgba(0,0,0,0.1);
-		}
-	    .ynet-silder-nav{
-	    	width: 180px;
-    		flex-direction: column !important;
-    		display: flex;
-		    flex-wrap: wrap;
-		    padding-left: 0;
-		    margin-bottom: 0;
-		    list-style: none;
-		    .ynet-silder-nav-item{
-		    	position: relative;
-			    margin: 0;
-			    border-bottom: 1px solid #fff;
-			    &:hover{
-			    	cursor: pointer;
-			    }
-			    .ynet-silder-nav-link{
-		    	    display: block;
-				    padding: 1rem .7rem;
-				    color: #fff;
-				    font-weight: 500;
-				    text-decoration: none;
-				    background: 0 0;
-				     overflow:hidden;
-				    &:hover{
-				    	cursor: pointer;
-				    	background:#ccc;
-				    }
-				    .ynet-silder-icon{
-				    	color:red;
-				    	width: 20px;
-					    margin: 0 .5rem 0 0;
-					    font-size: 16px;
-					    text-align: center;
-				    }
-			    }
-			    .ynet-silder-nav-link-toggle{
-			    	&::before{
-			    	    position: absolute;
-					    top: .96875rem;
-					    right: 1rem;
-					    display: block;
-					    width: .875rem;
-					    height: .875rem;
-					    padding: 0;
-					    font-size: 1.875rem;
-					    line-height: .85625rem;
-					    text-align: center;
-					    content: "\2039";
-					    transition: .3s;
-				    }
-			    }
-			    .ynet-silder-nav-dropdown{
-			    	max-height: 0;
-				    padding: 0;
-				    margin: 0;
-				    overflow-y: hidden;
-				    background: rgba(0, 0, 0, .2);
-				    li{
-				    	padding-left: 2.3rem;
-				    	border-bottom:none;
-				    }
-			    }
-		    }
-		    .open{
-		    	&>.ynet-silder-nav-link{
-		    		&::before{
-		    			transform: rotate(-90deg)
-		    		}
-		    	}
-		    	&>.ynet-silder-nav-dropdown{
-			    	max-height: 1000px;
-			    }
-			    &.active{background: #20a8d8;}
-			    &>.ynet-silder-nav-link:hover{
-		    		background:pink;
-		    	}
-
-		    }
-		    
-	    }
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    &::-webkit-scrollbar {
+      /*滚动条整体样式*/
+      width: 4px;
+      /*高宽分别对应横竖滚动条的尺寸*/
+      height: 4px;
     }
+    &::-webkit-scrollbar-thumb {
+      /*滚动条里面小方块*/
+      border-radius: 5px;
+      -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+      //background: rgba(123,123,123,0.2);
+      background: rgba(18, 150, 219, .5)
+    }
+    &::-webkit-scrollbar-track {
+      /*滚动条里面轨道*/
+      -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+      border-radius: 0;
+      background: rgba(0, 0, 0, 0.1);
+    }
+    .ynet-silder-nav {
+      width: 180px;
+      flex-direction: column !important;
+      display: flex;
+      flex-wrap: wrap;
+      padding-left: 0;
+      margin-bottom: 0;
+      list-style: none;
+      .ynet-silder-nav-item {
+        position: relative;
+        margin: 0;
+        border-bottom: 1px solid $sliderBorBomColor;
+        .ynet-silder-nav-link {
+          display: block;
+          padding: 1rem .7rem;
+          color: #fff;
+          font-weight: 500;
+          text-decoration: none;
+          background: 0 0;
+          overflow: hidden;
+          &:hover {
+            cursor: pointer;
+            background: $sliderHoverColor;
+          }
+          .ynet-silder-icon {
+            color: red;
+            width: 20px;
+            margin: 0 .5rem 0 0;
+            font-size: 16px;
+            text-align: center;
+          }
+        }
+        .ynet-silder-nav-link-toggle {
+          &::before {
+            position: absolute;
+            top: .96875rem;
+            right: 1rem;
+            display: block;
+            width: .875rem;
+            height: .875rem;
+            padding: 0;
+            font-size: 1.875rem;
+            line-height: .85625rem;
+            text-align: center;
+            content: "\2039";
+            transition: .3s;
+          }
+        }
+        .ynet-silder-nav-dropdown {
+          max-height: 0;
+          padding: 0;
+          margin: 0;
+          overflow-y: hidden;
+          background: rgba(0, 0, 0, .2);
+          li {
+            //padding-left: 2.3rem;
+            border-bottom: none;
+            .ynet-silder-nav-link {
+              padding-left: 2rem;
+            }
+            ul {
+              li {
+                .ynet-silder-nav-link {
+                  padding-left: 4rem;
+                }
+              }
+            }
+          }
+        }
+      }
+      .open {
+        &>.ynet-silder-nav-link {
+          &::before {
+            transform: rotate(-90deg)
+          }
+        }
+        &>.ynet-silder-nav-dropdown {
+          max-height: 1000px;
+        }
+        &.active {
+          background: $sliderHActiveBgColor;
+          color:$sliderHActiveColor;
+        }
+        &>.ynet-silder-nav-link:hover {
+          // background: pink;
+        }
+
+      }
+
+    }
+  }
+}
+// 菜单栏收起
+.sidebar-minimized {
+  .ynet-silder {
+    flex: 0 0 50px;
+    width: 50px;
+    z-index: 1019;
+    overflow-x: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    &::-webkit-scrollbar {
+      /*滚动条整体样式*/
+      width: 4px;
+      /*高宽分别对应横竖滚动条的尺寸*/
+      height: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+      /*滚动条里面小方块*/
+      border-radius: 5px;
+      -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+      background: rgba(18, 150, 219, .5)
+    }
+    &::-webkit-scrollbar-track {
+      /*滚动条里面轨道*/
+      -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+      border-radius: 0;
+      background: rgba(0, 0, 0, 0.1);
+    }
+    &:hover {
+      overflow: visible;
+    }
+    .ynet-silder-sidebar {
+      overflow: visible;
+      width: 50px;
+      height: calc(100vh - 80px);
+      .ynet-silder-nav {
+        width: 50px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        .ynet-silder-nav-item {
+          width: 50px;
+          overflow: hidden;
+          border-left: 0 !important;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          &:hover {
+            width: 180px;
+            overflow: visible;
+            background: $sliderHActiveBgColor;
+            transition: .3s;
+            list-style: none;
+            .ynet-silder-nav-link {
+              width: 180px;
+              overflow: hidden;
+            }
+            ul {
+              display: inline;
+              max-height: 10000px;
+              height: auto !important;
+              transition: 0s;
+              overflow: inherit !important;
+              width: 130px;
+              position: absolute;
+              right: 0;
+              top: 100%;
+              li {
+                width: 130px;
+                position: relative;
+                .ynet-silder-nav-link {
+                  width: 130px;
+                }
+              }
+            }
+          }
+          .ynet-silder-nav-link {
+            width: 130px;
+            position: relative;
+            padding-left: 0;
+            padding-right: 0;
+            margin: 0;
+            white-space: nowrap;
+            &:hover {
+              width: 180px;
+            }
+            .ynet-silder-icon {
+              display: block;
+              float: left;
+              width: 50px;
+              font-size: 18px;
+            }
+          }
+          .ynet-silder-nav-dropdown {
+            position: absolute;
+            left: 50px;
+            background: $sliderBgClor;
+            li {
+              position: relative;
+              .ynet-silder-nav-link {
+                width: 130px;
+                padding-left: 0;
+              }
+              ul {
+                position: absolute;
+                top: 0;
+                left: 100%;
+                li {
+                  .ynet-silder-nav-link {
+                    padding-left: 0;
+                  }
+                }
+              }
+            }
+          }
+          .ynet-silder-nav-link-toggle {
+            &:before {
+              display: none;
+            }
+          }
+        }
+        .open {
+          background: $sliderHActiveBgColor;
+          color:$sliderHActiveColor;
+        }
+      }
+    }
+  }
+
 }

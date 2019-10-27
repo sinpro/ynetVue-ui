@@ -110,7 +110,7 @@ export default {
   },
   props: {
       routes: {
-          type: Array
+        type: Array
       }
   },
   methods: {

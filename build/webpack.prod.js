@@ -52,18 +52,19 @@ module.exports = {
     ]
   },
   plugins: [
-  new HtmlWebpackPlugin({
-    template: path.resolve(__dirname, '../dist/index.html')
-  }),
-  new ExtractTextPlugin({
-    filename: 'css/[name].[hash:7].css'
-  }),
-  new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: 'index.html'
+    }),
+    new ExtractTextPlugin({
+      filename: 'css/[name].[hash:7].css'
+    }),
+    new CleanWebpackPlugin(),
   ],
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': path.resolve(__dirname, '../src')
+      '@': path.resolve(__dirname, '../src'),
+      '^': path.resolve(__dirname, '../view')
     },
     extensions: ['*', '.js', '.vue', '.json']
   },

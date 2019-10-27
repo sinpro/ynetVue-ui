@@ -3,10 +3,10 @@
     padding: 0 1rem;
     line-height: 50px;
     color: #263238;
-    background: #eceff1;
+    background: $footerBgColor;
     border-top: 1px solid #cfd8dc;
     margin-left: 180px;
-    transition: margin-left .25s, margin-right .25s, width .25s, flex .25s;
+    transition: $transition;
     a{
     	color: #2d8cf0;
 	    background: 0 0;
@@ -14,6 +14,11 @@
 	    outline: 0;
 	    cursor: pointer;
 	    -webkit-transition: color .2s ease;
-	    transition: color .2s ease;
+	    transition: $transition;
+    }
+}
+.sidebar-minimized{
+    .ynet-footer{
+      margin-left: 50px;
     }
 }

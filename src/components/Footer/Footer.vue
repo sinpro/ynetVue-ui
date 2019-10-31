@@ -1,7 +1,7 @@
 <template>
   <div class="ynet-footer">
     <slot></slot>
-    <span class="float-right">Powered by <a href="https://github.com/sinpro/vue-ui.git">GitHub</a></span>
+    <span class="float-right">Powered by <a href="https://github.com/sinpro/vue-ui.git">GitHub by Sinpro</a></span>
   </div>
 </template>
 

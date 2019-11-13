@@ -5,4 +5,4 @@ VuePlugin.install = function(Vue, options) {
         Vue.component('ynet'+component, components[component]);
     }
 }
-export default VuePlugin
+export default VuePlugin;

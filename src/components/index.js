@@ -3,6 +3,7 @@ import Footer from './Footer/Footer.vue';
 import Silder from './Silder/Silder.vue';
 import Breadnav from './Breadnav/Breadnav.vue';
 import Container from './Container/Container.vue';
+import Icon from './Icon/Icon.vue';
 
 import Button from './Button/Button.vue';
 import Modal from './Modal/Modal.vue';
@@ -16,4 +17,5 @@ export {
     Silder,
     Breadnav,
     Container,
+    Icon
 }

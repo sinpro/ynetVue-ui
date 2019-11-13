@@ -7,6 +7,7 @@
         <ynet-breadnav :list="list"/></ynet-breadnav>
         <div class="main">
           111111111111卡发货方第三方就给大家电视剧给大家郭德纲打开嘎多健康管家公积金卡高科技的号哈拉海公开噶好了旮旯哈哈哈个啊哈拉黑可好看阿基发电话考虑到发货快快来划分刚回来的发了哈哈发来看看喝咖啡了卡两个卡号发客户可开发多看哈发货的客户发的卡按返回克劳福德哈哈富滇哈就爱回家哈好浪费就厉害了哈哈
+          <ynet-icon name="zhifubao" color="#1296de" size="large"></ynet-icon>
           <router-view></router-view>
         </div>
       </main>

@@ -1,12 +1,12 @@
 <template>
   <div>
-    首页
+    图标页面
   </div>
 </template>
 
 <script>
 export default {
-  name: 'home',
+  name: 'icon',
   data () {
     return {
       

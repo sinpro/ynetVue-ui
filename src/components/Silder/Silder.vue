@@ -10,9 +10,10 @@
               :to="itemPar.path" 
               :class="['ynet-silder-nav-link',itemPar.children?'ynet-silder-nav-link-toggle':'']" exact
             >
-              <span class="ynet-silder-icon">1!</span>
-              <!-- <Icon :type="itemPar.icon" color="white"/> -->
-                {{ itemPar.name}}
+              <span class="ynet-silder-icon">
+                <ynet-icon :name="itemPar.icon" color="#fff"></ynet-icon>
+              </span>
+              {{ itemPar.name}}
             </router-link>
           </li>
           <router-link
@@ -25,9 +26,10 @@
                 :class="['ynet-silder-nav-link ynet-silder-link-par',itemPar.children?'ynet-silder-nav-link-toggle':'']" 
                 @click="addParActive(p,$event)"
               >
-                  <!-- <Icon :type="itemPar.icon" color="white"/> -->
-                  <span class="ynet-silder-icon">@2</span>
-                  {{ itemPar.name}}
+                <span class="ynet-silder-icon">
+                  <ynet-icon :name="itemPar.icon" color="#fff"></ynet-icon>
+                </span>
+                {{ itemPar.name}}
               </div>
               <ul class="ynet-silder-nav-dropdown">
                 <template v-for="(itemChi,c) in itemPar.children">
@@ -38,8 +40,10 @@
                       :to="itemPar.path+'/'+itemChi.path" 
                       :class="['ynet-silder-nav-link',itemChi.children?'ynet-silder-nav-link-toggle':'']" exact
                     >
-                      <span class="ynet-silder-icon">#3</span>
-                      <!-- <Icon :type="itemChi.icon" color="white"/> -->{{itemChi.name}}
+                      <span class="ynet-silder-icon">
+                        <ynet-icon :name="itemChi.icon" color="#fff"></ynet-icon>
+                      </span>
+                      {{itemChi.name}}
                     </router-link>
                   </li>
                   <router-link 
@@ -51,8 +55,9 @@
                     <div 
                       :class="['ynet-silder-nav-link ynet-silder-link-chi',itemChi.children?'ynet-silder-nav-link-toggle':'']" 
                       @click="addChiActive(c,$event)">
-                      <span class="ynet-silder-icon">$4</span>
-                      <!-- <Icon :type="itemChi.icon"/> -->{{ itemChi.name}}
+                      <span class="ynet-silder-icon">
+                        <ynet-icon :name="itemChi.icon" color="#fff"></ynet-icon>
+                      </span>{{ itemChi.name}}
                     </div>
                     <ul class="ynet-silder-nav-dropdown">
                       <template v-for="(itemGro,g) in itemChi.children">
@@ -63,8 +68,9 @@
                             :to="itemPar.path+'/'+itemChi.path+'/'+itemGro.path" 
                             :class="['ynet-silder-nav-link',itemGro.children?'ynet-silder-nav-link-toggle':'']" exact
                           >
-                            <span class="ynet-silder-icon">#5</span>
-                            <!-- <Icon :type="itemChi.icon" color="white"/> -->{{itemGro.name}}
+                            <span class="ynet-silder-icon">
+                              <ynet-icon :name="itemGro.icon" color="#fff"></ynet-icon>
+                            </span>{{itemGro.name}}
                           </router-link>
                         </li>
                         <router-link 
@@ -76,8 +82,9 @@
                           <div 
                             :class="['ynet-silder-nav-link ynet-silder-link-gro',itemGro.children?'ynet-silder-nav-link-toggle':'']" 
                             @click="addChiActive(c,$event)">
-                            <span class="ynet-silder-icon">^6</span>
-                            <!-- <Icon :type="itemChi.icon"/> -->{{ itemGro.name}}
+                            <span class="ynet-silder-icon">
+                              <ynet-icon :name="itemGro.icon" color="#fff"></ynet-icon>
+                            </span>{{itemGro.name}}
                           </div>
                           <ul class="ynet-silder-nav-dropdown">
                             <template>

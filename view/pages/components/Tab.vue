@@ -1,12 +1,12 @@
 <template>
   <div>
-    首页
+    tab
   </div>
 </template>
 
 <script>
 export default {
-  name: 'home',
+  name: 'tab',
   data () {
     return {
       

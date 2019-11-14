@@ -1,34 +1,52 @@
+
+import Article from '@/components/Container/Container'
+
+import HText from '@/components/text/text.vue'
 const routes=[
     {
         "path": "/home",
         "name": "Home主页",
         "icon": "md-home",
-        "component":{"name": "Home",}
+        "component":{"name": "Home"},
+        "children": [
+            {
+            "path": "text",
+            "name": "ziluyou我问 ",
+            "icon": "ios-home",
+            "component":HText,
+        }
+        ],
     },
     {
         "path": "/index",
         "name": "首页",
         "icon": "md-outlet",
-        "redirect": "/index/Index1",
-        "component":{},
+        "redirect": "/index/index1",
+        "component": {
+                            render(c) {
+                                return c('router-view')
+                    }
+            },
         "hidden": false,
         "children": [
         {
             "path": "index1",
             "name": "首页1",
             "icon": "ios-funnel",
-            "redirect": "/index/index1/Index1_1",
-            "component":{},
+            // "redirect": "/index/index1/Index1_1",
+            "component":Article,
+            // "component": {
+            //                 render(c) {
+            //                     return c('router-view')
+            //         }
+            // },
             "hidden": false,
             "children": [
             {
                 "path": "index1_1",
                 "name": "首页1-1",
                 "icon": "ios-aperture",
-                "component":
-                {
-                    "name": "Index1_1",
-                },
+                "component":Article,
                 "hidden": false
             },
             {
@@ -435,19 +453,20 @@ const routes=[
         }]
     },
     {
-        "path": "/text",
-        "name": "测试页",
+        "path": "text",
+        "name": "测试页11",
         "icon": "ios-home",
-        "component":
-        {
-            "name": "Text",
-            "methods":
-            {},
-            "staticRenderFns": [],
-            "__file": "E:\\资料\\framework\\vue框架\\vue管理框架_完美登录\\src\\views\\pages\\Text.vue",
-            "beforeCreate": [null],
-            "beforeDestroy": [null]
+        component: {
+                            render(c) {
+                                return c('router-view')
         }
+        },
+        "component":HText,
+  
+        // 
+         
+
+        
     }
 ]
 export default routes;

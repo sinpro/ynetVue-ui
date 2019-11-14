@@ -1,17 +1,17 @@
 <template>
   <div>
     <!-- <router-view></router-view> -->
-    <ynet-container>ggg</ynet-container>
+    <div>fkdhfdjjdfjhhhf</div>
   </div>
 </template>
 
 <script>
 import Routes from '../../../view/mock/routes.js';
 export default {
-  name: 'Full',
+  name: 'List1',
   created(){
     console.log(this.$route)
-    // this.routes=Routes;
+    this.routes=Routes;
   },
   data () {
     return {

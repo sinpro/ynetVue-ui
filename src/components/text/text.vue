@@ -1,20 +1,21 @@
 <template>
-  <div>
-    首页
-     <!-- <router-view></router-view>  -->
+  <div >
+   text
   </div>
 </template>
 
 <script>
 export default {
-  name: 'home',
+  name: 'htext',
+  display: 'Header头部',
   data () {
     return {
-      
+      preCls: 'ynet-header'
     }
-
   },
+ 
   methods: {
+   
   }
 }
 </script>

@@ -1,5 +1,21 @@
-import Routes from '../mock/routes.js';
-const routes = [
+//import Routes from '../mock/routes.js';
+export const constantRoutes=[
+  {path: '/login', component: ()=>import('&/pages/common/Login.vue'), hidden: false},
+  {
+      path: '/pages', redirect: '/pages/page404', name: 'Pages404',
+      component: {
+          render(c) {
+              return c('router-view')
+          }
+          // Full,
+      },
+      children: [
+          {path: 'page404', name: 'Page404', component: ()=>import('&/pages/common/Page404.vue'),},
+          {path: 'page500', name: 'Page500', component: ()=>import('&/pages/common/Page500.vue'),},
+      ]
+  }
+];
+export const asyncRoutes = [
   {
     path: '/',
     redirect: '/home',
@@ -71,4 +87,3 @@ const routes = [
   
 ];
 //const routes = Routes;
-export default routes;

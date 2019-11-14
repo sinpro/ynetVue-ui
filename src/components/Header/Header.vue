@@ -2,7 +2,7 @@
   <div class="ynet-header">
     <div>
       <a href="https://github.com/sinpro/vue-ui.git" class="logopic"><img :src="logoPic"></a>
-      <span style="position: fixed;left: 180px;top: 30px;cursor: pointer;" @click="sidebarToggle">
+      <span style="position: fixed;left: 180px;top: 25px;cursor: pointer;" @click="sidebarToggle">
         <ynet-icon  :name="isShowMenu?'shouqicaidan':'zhankaicaidan'"  size="normal"></ynet-icon>
       </span>
       

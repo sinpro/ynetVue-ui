@@ -16,12 +16,15 @@
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex';
 import Routes from '../../../view/mock/routes.js';
+//import Routes from '../../../view/router/routes.js';
 export default {
   name: 'Full',
   created(){
-    console.log(this.$route)
-    this.routes=this.$route;
+    console.log(this.siderbar_routers)
+    // console.log(Routes)
+    // this.routes=Routes;
   },
   data () {
     return {
@@ -33,7 +36,10 @@ export default {
   computed: {
     list () { 
       return this.$route.matched
-    }
+    },
+    ...mapGetters([
+      'siderbar_routers'
+    ])
   },
   methods: {
   }

@@ -1,12 +1,12 @@
 <template>
   <div>
-    首页
+    500页面
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Home',
+  name: 'Page500',
   data () {
     return {
       

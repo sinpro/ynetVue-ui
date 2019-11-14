@@ -22,3 +22,6 @@ export default {
   }
 }
 </script>
+<!-- <style>
+  @import url('../src/assets/font/iconfont.css');
+</style> -->

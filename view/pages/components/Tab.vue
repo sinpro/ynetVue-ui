@@ -1,13 +1,12 @@
 <template>
   <div>
-    首页
-     <!-- <router-view></router-view>  -->
+    tab
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Home',
+  name: 'tab',
   data () {
     return {
       

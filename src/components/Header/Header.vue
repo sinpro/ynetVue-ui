@@ -2,7 +2,10 @@
   <div class="ynet-header">
     <div>
       <a href="https://github.com/sinpro/vue-ui.git" class="logopic"><img :src="logoPic"></a>
-      <button @click="sidebarToggle" style="position: fixed;left: 180px;top: 30px;">导航缩进</button>
+      <span style="position: fixed;left: 180px;top: 25px;cursor: pointer;" @click="sidebarToggle">
+        <ynet-icon  :name="isShowMenu?'shouqicaidan':'zhankaicaidan'"  size="normal"></ynet-icon>
+      </span>
+      
     </div>
   </div>
 </template>
@@ -13,7 +16,8 @@ export default {
   display: 'Header头部',
   data () {
     return {
-      preCls: 'ynet-header'
+      preCls: 'ynet-header',
+      isShowMenu:true
     }
   },
   props: {
@@ -21,6 +25,7 @@ export default {
   },
   methods: {
     sidebarToggle (e) {
+      this.isShowMenu=!this.isShowMenu;
       e.preventDefault()
       document.body.classList.toggle('sidebar-minimized')
     },

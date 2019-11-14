@@ -6,6 +6,7 @@ const routes=[
     {
         "path": "/home",
         "name": "Home主页",
+<<<<<<< HEAD
         "icon": "md-home",
         "component":{"name": "Home"},
         "children": [
@@ -16,10 +17,15 @@ const routes=[
             "component":HText,
         }
         ],
+=======
+        "icon": "home",
+        "component":{"name": "Home",}
+>>>>>>> 481bee5240add84b6adadfe02e00b6312079f669
     },
     {
         "path": "/index",
         "name": "首页",
+<<<<<<< HEAD
         "icon": "md-outlet",
         "redirect": "/index/index1",
         "component": {
@@ -27,11 +33,17 @@ const routes=[
                                 return c('router-view')
                     }
             },
+=======
+        "icon": "xiangqing",
+        "redirect": "/index/Index1",
+        "component":{},
+>>>>>>> 481bee5240add84b6adadfe02e00b6312079f669
         "hidden": false,
         "children": [
         {
             "path": "index1",
             "name": "首页1",
+<<<<<<< HEAD
             "icon": "ios-funnel",
             // "redirect": "/index/index1/Index1_1",
             "component":Article,
@@ -40,19 +52,32 @@ const routes=[
             //                     return c('router-view')
             //         }
             // },
+=======
+            "icon": "xieyi",
+            "redirect": "/index/index1/Index1_1",
+            "component":{},
+>>>>>>> 481bee5240add84b6adadfe02e00b6312079f669
             "hidden": false,
             "children": [
             {
                 "path": "index1_1",
                 "name": "首页1-1",
+<<<<<<< HEAD
                 "icon": "ios-aperture",
                 "component":Article,
+=======
+                "icon": "shoukuan",
+                "component":
+                {
+                    "name": "Index1_1",
+                },
+>>>>>>> 481bee5240add84b6adadfe02e00b6312079f669
                 "hidden": false
             },
             {
                 "path": "index1_2",
                 "name": "首页1-2",
-                "icon": "md-appstore",
+                "icon": "jiekuan",
                 "component":
                 {
                     "name": "Index1_2",
@@ -62,7 +87,7 @@ const routes=[
             {
                 "path": "index1_3",
                 "name": "首页1-3",
-                "icon": "ios-at",
+                "icon": "zhuanzhang",
                 "component":
                 {
                     "name": "Index1_3",
@@ -73,7 +98,7 @@ const routes=[
         {
             "path": "index2",
             "name": "首页2",
-            "icon": "ios-bookmark",
+            "icon": "rongzi",
             "component":
             {
                 "name": "Index2",
@@ -83,7 +108,7 @@ const routes=[
         {
             "path": "index3",
             "name": "首页3",
-            "icon": "ios-funnel",
+            "icon": "zhuanfa",
             "redirect": "/index/index1/Index3_1",
             "component":
             {},
@@ -91,7 +116,7 @@ const routes=[
             {
                 "path": "index3_1",
                 "name": "首页3-1",
-                "icon": "ios-aperture",
+                "icon": "pinglun",
                 "component":
                 {
                     "name": "Index3_1",
@@ -101,7 +126,7 @@ const routes=[
             {
                 "path": "index3_2",
                 "name": "首页3-2",
-                "icon": "md-appstore",
+                "icon": "qiche",
                 "component":
                 {
                     "name": "Index3_1",
@@ -113,7 +138,7 @@ const routes=[
     {
         "path": "/list",
         "name": "列表页",
-        "icon": "ios-cloud",
+        "icon": "feiji",
         "redirect": "/list/List1",
         "component":
         {},
@@ -121,7 +146,7 @@ const routes=[
         {
             "path": "list1",
             "name": "列表页1",
-            "icon": "ios-albums",
+            "icon": "pdf",
             "redirect": "/list/list1/List1_1",
             "component":
             {},
@@ -129,7 +154,7 @@ const routes=[
             {
                 "path": "list1_1",
                 "name": "列表页1-1",
-                "icon": "ios-aperture",
+                "icon": "txt",
                 "component":
                 {
                     "name": "List1_1",
@@ -144,7 +169,7 @@ const routes=[
             {
                 "path": "list1_2",
                 "name": "列表页1-2",
-                "icon": "ios-aperture",
+                "icon": "excel",
                 "component":
                 {
                     "name": "List1_2",
@@ -159,7 +184,7 @@ const routes=[
             {
                 "path": "list1_3",
                 "name": "列表页1-3",
-                "icon": "ios-aperture",
+                "icon": "zhanghu",
                 "component":
                 {
                     "name": "List1_3",
@@ -174,7 +199,7 @@ const routes=[
             {
                 "path": "list1_4",
                 "name": "列表页1-4",
-                "icon": "ios-aperture",
+                "icon": "dianhuahaoma",
                 "component":
                 {
                     "name": "List1_4",
@@ -190,7 +215,7 @@ const routes=[
         {
             "path": "list2",
             "name": "列表页2",
-            "icon": "md-map",
+            "icon": "yuyin",
             "component":
             {
                 "name": "List2",
@@ -207,7 +232,7 @@ const routes=[
         {
             "path": "list3",
             "name": "列表页3",
-            "icon": "md-albums",
+            "icon": "weixin",
             "component":
             {
                 "methods":
@@ -224,7 +249,7 @@ const routes=[
     {
         "path": "/detail",
         "name": "详情页",
-        "icon": "md-analytics",
+        "icon": "qq",
         "redirect": "/detail/Detail1",
         "component":
         {},
@@ -232,7 +257,7 @@ const routes=[
         {
             "path": "detail1",
             "name": "详情页1",
-            "icon": "ios-arrow-dropdown-circle",
+            "icon": "yinhangka",
             "component":
             {
                 "name": "Detail1",
@@ -247,7 +272,7 @@ const routes=[
         {
             "path": "detail2",
             "name": "详情页2",
-            "icon": "ios-arrow-dropup-circle",
+            "icon": "xinyongka",
             "component":
             {
                 "name": "Detail2",
@@ -262,7 +287,7 @@ const routes=[
         {
             "path": "detail3",
             "name": "详情页3",
-            "icon": "ios-arrow-dropleft-circle",
+            "icon": "mima",
             "component":
             {
                 "name": "Detail3",
@@ -277,7 +302,7 @@ const routes=[
         {
             "path": "detail4",
             "name": "详情页4",
-            "icon": "ios-arrow-dropright-circle",
+            "icon": "yanzhengma",
             "component":
             {
                 "name": "Detail4",
@@ -293,7 +318,7 @@ const routes=[
     {
         "path": "/table",
         "name": "图标页",
-        "icon": "ios-barcode",
+        "icon": "tupian",
         "redirect": "/table/Table1",
         "component":
         {},
@@ -301,7 +326,7 @@ const routes=[
         {
             "path": "table1",
             "name": "图标页1",
-            "icon": "ios-flag",
+            "icon": "shezhi",
             "component":
             {
                 "name": "Table1",
@@ -316,7 +341,7 @@ const routes=[
         {
             "path": "table2",
             "name": "图标页2",
-            "icon": "ios-alert",
+            "icon": "gongneng",
             "component":
             {
                 "name": "Table2",
@@ -331,7 +356,7 @@ const routes=[
         {
             "path": "table3",
             "name": "图标页3",
-            "icon": "md-baseball",
+            "icon": "duanxin",
             "component":
             {
                 "name": "Table3",
@@ -347,7 +372,7 @@ const routes=[
     {
         "path": "/picture",
         "name": "图片页",
-        "icon": "md-bookmarks",
+        "icon": "guanzhu",
         "redirect": "/picture/Picture1",
         "component":
         {},
@@ -355,7 +380,7 @@ const routes=[
         {
             "path": "picture1",
             "name": "图片页1",
-            "icon": "ios-man",
+            "icon": "weihu",
             "component":
             {
                 "name": "Picture1",
@@ -370,7 +395,7 @@ const routes=[
         {
             "path": "picture2",
             "name": "图片页2",
-            "icon": "ios-woman",
+            "icon": "haoping",
             "component":
             {
                 "name": "Picture2",
@@ -385,7 +410,7 @@ const routes=[
         {
             "path": "picture3",
             "name": "图片页3",
-            "icon": "ios-female",
+            "icon": "chaping",
             "component":
             {
                 "name": "Picture3",
@@ -401,7 +426,7 @@ const routes=[
     {
         "path": "/article",
         "name": "文章页",
-        "icon": "ios-cafe",
+        "icon": "youxiang",
         "redirect": "/article/Article1",
         "component":
         {},
@@ -409,7 +434,7 @@ const routes=[
         {
             "path": "article1",
             "name": "文章页1",
-            "icon": "ios-person",
+            "icon": "liucheng",
             "component":
             {
                 "name": "Article1",
@@ -424,7 +449,7 @@ const routes=[
         {
             "path": "article2",
             "name": "文章页2",
-            "icon": "ios-pizza",
+            "icon": "saoma",
             "component":
             {
                 "name": "Article2",
@@ -439,7 +464,7 @@ const routes=[
         {
             "path": "article3",
             "name": "文章页3",
-            "icon": "ios-call",
+            "icon": "webo",
             "component":
             {
                 "name": "Article3",
@@ -453,12 +478,27 @@ const routes=[
         }]
     },
     {
+<<<<<<< HEAD
         "path": "text",
         "name": "测试页11",
         "icon": "ios-home",
         component: {
                             render(c) {
                                 return c('router-view')
+=======
+        "path": "/text",
+        "name": "测试页",
+        "icon": "kefu",
+        "component":
+        {
+            "name": "Text",
+            "methods":
+            {},
+            "staticRenderFns": [],
+            "__file": "E:\\资料\\framework\\vue框架\\vue管理框架_完美登录\\src\\views\\pages\\Text.vue",
+            "beforeCreate": [null],
+            "beforeDestroy": [null]
+>>>>>>> 481bee5240add84b6adadfe02e00b6312079f669
         }
         },
         "component":HText,

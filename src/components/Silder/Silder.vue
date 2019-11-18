@@ -110,7 +110,7 @@ export default {
   display: 'Silder侧边',
   data () {
     return {
-      preCls: 'ynet-Silder',
+      preCls: 'ynet-silder',
       currentPar:0,
       currentChi:10,
     }

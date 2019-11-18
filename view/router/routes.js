@@ -1,89 +1,55 @@
-//import Routes from '../mock/routes.js';
-export const constantRoutes=[
-  {path: '/login', component: ()=>import('&/pages/common/Login.vue'), hidden: false},
-  {
-      path: '/pages', redirect: '/pages/page404', name: 'Pages404',
-      component: {
-          render(c) {
-              return c('router-view')
-          }
-          // Full,
-      },
-      children: [
-          {path: 'page404', name: 'Page404', component: ()=>import('&/pages/common/Page404.vue'),},
-          {path: 'page500', name: 'Page500', component: ()=>import('&/pages/common/Page500.vue'),},
-      ]
-  }
-];
-export const asyncRoutes = [
+const routes = [
   {
     path: '/',
     redirect: '/home',
     name: 'Home',
-    component: ()=>import('&/pages/common/Full.vue'),
+    component: ()=>import('view/pages/common/Full.vue'),
     hidden: false,
     children:[
-      {path: '/home',name: '首页',icon:"home",component: ()=>import('&/pages/Home.vue')},
+      {path: '/home',name: '主页',icon:"home",component: ()=>import('view/pages/Home')},
       {
-        path: '/components',name: '組件',icon:"yinhangka",redirect: '/components/icon',
-        component: {
-            render(c) {
-                return c('router-view')
-            }
-        },
-        children: [
-          {
-            path: 'icon',
-            name: '图标',
-            icon: 'yinhangka',
-            component: ()=>import('&/pages/components/Icon.vue'),
-            hidden: false,
+        path: '/components',name: '组件',icon:"duanxin",redirect: '/components/icon',
+          component: {
+              render(c) {
+                  return c('router-view')
+              }
           },
-          {
-            path: 'tab',
-            name: 'tab导航',
-            icon: 'yinhangka',
-            component: ()=>import('&/pages/components/Tab.vue'),
-            hidden: false,
-          },
-          {
-            path: 'table',
-            name: '表格',
-            icon: 'yinhangka',
-            component: ()=>import('&/pages/components/Table.vue'),
-            hidden: false,
-          }
-        ]
+          children: [
+              {
+                  path: 'icon',
+                  name: 'Icon',
+                  icon: 'tupian',
+                  component: ()=>import('view/pages/components/Icon.vue'),
+                  hidden: false,
+              },
+              {
+                  path: 'grid',
+                  name: 'Grid',
+                  icon: 'tupian',
+                  component: ()=>import('view/pages/components/Grid.vue'),
+                  hidden: false,
+              },{
+                  path: 'tab',
+                  name: 'tab',
+                  icon: 'shezhi',
+                  component: ()=>import('view/pages/components/Tab.vue'),
+                  hidden: false,
+              },{
+                  path: 'table',
+                  name: 'Table',
+                  icon: 'gongneng',
+                  component: ()=>import('view/pages/components/Table.vue'),
+                  hidden: false,
+              },{
+                  path: 'button',
+                  name: 'button',
+                  icon: 'weixian',
+                  component: ()=>import('view/pages/components/Button.vue'),
+                  hidden: false,
+              },
+          ]
       }
-
-    ],
-  }
-
-
-	/*{
-    path: '/',
-    redirect: '/home'
-  },{//
-      path: '/home',
-      name: '首页',
-      component: ()=>import('&/pages/common/Full.vue'),
-      meta:{title:'首页'}
-  },{//
-      path: '/components/icon',
-      name: '图标',
-      component: ()=>import('&/pages/components/Icon.vue'),
-      meta:{title:'图标'}
-  },{//
-      path: '/component/tab',
-      name: 'tab导航',
-      component: ()=>import('&/pages/components/Tab.vue'),
-      meta:{title:'tab导航'}
-  },{//
-      path: '/component/table',
-      name: '表格',
-      component: ()=>import('&/pages/components/Table.vue'),
-      meta:{title:'表格'}
-  }*/
-  
+    ]
+  },
 ];
-//const routes = Routes;
+export default routes;

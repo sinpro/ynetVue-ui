@@ -1,6 +1,14 @@
 <template>
   <div>
-    图标页面
+    <h2>图标展示</h2>
+    <div>
+      <ul>
+        <li>
+          <ynet-icon name="home" ></ynet-icon>
+          <span>home</span>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -16,3 +24,6 @@ export default {
   }
 }
 </script>
+<style scoped lang="scss">
+  
+</style>

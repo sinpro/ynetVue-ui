@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import App from './App.vue';
 
-import '@/assets/index.scss';
-import ynetUi from '@';
+import 'src/assets/index.scss';
+import ynetUi from 'src';
 import './assets/styles/style.scss';
 Vue.use(ynetUi)
 

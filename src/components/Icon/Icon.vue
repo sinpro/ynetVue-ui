@@ -13,7 +13,7 @@ export default {
   display: 'Icon图标',
   data () {
     return {
-      preCls: 'ynet-Icon'
+      preCls: 'ynet-icon'
     }
   },
   props: {

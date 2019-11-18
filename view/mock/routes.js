@@ -6,6 +6,60 @@ const routes=[
         "component":{"name": "Home",}
     },
     {
+        "path": "/components",
+        "name": "组件",
+        "icon": "tupian",
+        "redirect": "/components/icon",
+        "component":
+        {},
+        "children": [
+        {
+            "path": "icon",
+            "name": "Icon",
+            "icon": "shezhi",
+            "component":
+            {
+                "name": "Table1",
+                "staticRenderFns": [],
+                "_scopeId": "data-v-8d4cbe92",
+                "beforeCreate": [null, null],
+                "__file": "E:\\资料\\framework\\vue框架\\vue管理框架_完美登录\\src\\views\\pages\\pagesmenu\\Table1.vue",
+                "beforeDestroy": [null]
+            },
+            "hidden": false
+        },
+        {
+            "path": "tab",
+            "name": "Tab",
+            "icon": "gongneng",
+            "component":
+            {
+                "name": "Table2",
+                "staticRenderFns": [],
+                "_scopeId": "data-v-8d308f90",
+                "beforeCreate": [null, null],
+                "__file": "E:\\资料\\framework\\vue框架\\vue管理框架_完美登录\\src\\views\\pages\\pagesmenu\\Table2.vue",
+                "beforeDestroy": [null]
+            },
+            "hidden": false
+        },
+        {
+            "path": "table",
+            "name": "Table",
+            "icon": "duanxin",
+            "component":
+            {
+                "name": "Table3",
+                "staticRenderFns": [],
+                "_scopeId": "data-v-8d14608e",
+                "beforeCreate": [null, null],
+                "__file": "E:\\资料\\framework\\vue框架\\vue管理框架_完美登录\\src\\views\\pages\\pagesmenu\\Table3.vue",
+                "beforeDestroy": [null]
+            },
+            "hidden": false
+        }]
+    },
+    {
         "path": "/index",
         "name": "首页",
         "icon": "xiangqing",
@@ -97,8 +151,7 @@ const routes=[
         "name": "列表页",
         "icon": "feiji",
         "redirect": "/list/List1",
-        "component":
-        {},
+        "component":{},
         "children": [
         {
             "path": "list1",
@@ -272,60 +325,7 @@ const routes=[
             "hidden": false
         }]
     },
-    {
-        "path": "/table",
-        "name": "图标页",
-        "icon": "tupian",
-        "redirect": "/table/Table1",
-        "component":
-        {},
-        "children": [
-        {
-            "path": "table1",
-            "name": "图标页1",
-            "icon": "shezhi",
-            "component":
-            {
-                "name": "Table1",
-                "staticRenderFns": [],
-                "_scopeId": "data-v-8d4cbe92",
-                "beforeCreate": [null, null],
-                "__file": "E:\\资料\\framework\\vue框架\\vue管理框架_完美登录\\src\\views\\pages\\pagesmenu\\Table1.vue",
-                "beforeDestroy": [null]
-            },
-            "hidden": false
-        },
-        {
-            "path": "table2",
-            "name": "图标页2",
-            "icon": "gongneng",
-            "component":
-            {
-                "name": "Table2",
-                "staticRenderFns": [],
-                "_scopeId": "data-v-8d308f90",
-                "beforeCreate": [null, null],
-                "__file": "E:\\资料\\framework\\vue框架\\vue管理框架_完美登录\\src\\views\\pages\\pagesmenu\\Table2.vue",
-                "beforeDestroy": [null]
-            },
-            "hidden": false
-        },
-        {
-            "path": "table3",
-            "name": "图标页3",
-            "icon": "duanxin",
-            "component":
-            {
-                "name": "Table3",
-                "staticRenderFns": [],
-                "_scopeId": "data-v-8d14608e",
-                "beforeCreate": [null, null],
-                "__file": "E:\\资料\\framework\\vue框架\\vue管理框架_完美登录\\src\\views\\pages\\pagesmenu\\Table3.vue",
-                "beforeDestroy": [null]
-            },
-            "hidden": false
-        }]
-    },
+    
     {
         "path": "/picture",
         "name": "图片页",

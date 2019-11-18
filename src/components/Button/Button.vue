@@ -13,7 +13,7 @@ export default {
     display: 'Button按钮',
     data() {
         return {
-            preCls: 'ynet-btn',
+            preCls: 'ynet-button',
         }
     },
     props: {

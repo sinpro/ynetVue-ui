@@ -17,7 +17,6 @@
 export default {
   name: 'Full',
   created(){
-    console.log(this.$router.options.routes[0].children)
     this.routes = this.$router.options.routes[0].children;
   },
   data () {

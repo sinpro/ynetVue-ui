@@ -1,3 +1,4 @@
+
 const routes = [
   {
     path: '/',
@@ -49,6 +50,7 @@ const routes = [
               },
           ]
       }
+
     ]
   },
 ];

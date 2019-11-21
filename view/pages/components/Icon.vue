@@ -4,7 +4,7 @@
     <div>
       <ul>
         <li>
-          <ynet-icon name="home" ></ynet-icon>
+          <ynet-icon name="home"></ynet-icon>
           <span>home</span>
         </li>
       </ul>

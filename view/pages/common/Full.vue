@@ -49,7 +49,7 @@ export default {
         .container-main{
             padding-bottom: 10px;
             margin-left: 180px;
-            background-color: #eff0f4;
+            background-color: #fff;
             flex: 1;
             min-width: 0;
             transition: margin-left .25s, margin-right .25s, width .25s, flex .25s;

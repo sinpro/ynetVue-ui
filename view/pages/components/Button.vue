@@ -1,12 +1,12 @@
 <template>
   <div>
-    按钮
+    <ynet-button>1111</ynet-button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'icon',
+  name: 'button',
   data () {
     return {
       

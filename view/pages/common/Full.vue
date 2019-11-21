@@ -40,6 +40,7 @@ export default {
   display: flex;
     flex-direction: column;
     min-height: 100vh;
+    max-height: 100vh;
     .container-body{
       margin-top: 80px;
       display: flex;
@@ -52,8 +53,11 @@ export default {
             background-color: #eff0f4;
             flex: 1;
             min-width: 0;
+            max-height: 100%;
             transition: margin-left .25s, margin-right .25s, width .25s, flex .25s;
-            .main{padding: 1rem;}
+            .main{
+              padding: 1rem;
+            }
         }
     } 
 }
@@ -61,7 +65,7 @@ export default {
     .container{
         .container-body{
             .container-main{
-                margin-left: 50px;
+              margin-left: 50px;
             }
         } 
     }

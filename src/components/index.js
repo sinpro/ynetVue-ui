@@ -10,7 +10,6 @@ import Icon from './Icon/Icon.vue';
 import Row from './Row/Row.vue';
 import Col from './Col/Col.vue';
 
-
 export {
     Button,
     Modal,
@@ -21,5 +20,5 @@ export {
     Container,
     Icon,
     Row,
-    Col
+    Col,
 }

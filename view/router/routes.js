@@ -1,4 +1,3 @@
-
 const routes = [
   {
     path: '/',
@@ -47,10 +46,9 @@ const routes = [
                   icon: 'weixian',
                   component: ()=>import('view/pages/components/Button.vue'),
                   hidden: false,
-              },
+              }
           ]
       }
-
     ]
   },
 ];

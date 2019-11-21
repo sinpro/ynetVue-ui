@@ -1,0 +1,61 @@
+$default: #000;
+$primary:#409eff;
+$success: #20d08c;
+$danger: #e91a1a;
+$warning: #ffb200;
+$info: #979b9f;
+$pointer:pointer;
+$margin-right:10px;
+
+/* @mixin link-type($color) {
+    color:#fff ;
+    font-weight: 900;
+    &:hover{
+        underline:true
+    }
+} */
+.ynet-link {
+  display: inline-block;
+  text-decoration: none;
+  margin-left: 10px;
+  height: 20px;
+  line-height: 20px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.disabled {
+  text-decoration: none !important;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cleanLine {
+  text-decoration: none !important;
+}
+
+.default {
+  color: $default,
+}
+
+.primary {
+  color: $primary
+}
+
+.success {
+  color: $success
+}
+
+.danger {
+  color: $danger
+}
+
+.warning {
+  color: $warning
+}
+
+.info {
+  color: $info
+}

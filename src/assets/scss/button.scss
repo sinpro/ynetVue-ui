@@ -1,8 +1,9 @@
 $success: #20d08c;
 $error: #e91a1a;
 $warning: #ffb200;
-$info: #005ff1;
+$info: #909399;
 $default: #ddd;
+$primary: #005ff1;
 $white: #fff;
 @mixin btn-type($color, $bgColor) {
     color: #fff;
@@ -18,11 +19,12 @@ $white: #fff;
         border-color: darken($color, 2%);
     }
     &:disabled {
+        opacity: .4;
         &:hover, &:active {
-            color: #999;
+            color: #fff;
             cursor: not-allowed;
-            border-color: #ddd;
-            background: #eee;
+            border-color: lighten($color, 5%);
+            background: lighten($color, 5%);
         }
     }
 }
@@ -38,29 +40,45 @@ $white: #fff;
     height: 32px;
     border-radius: 4px;
     outline: none;
-    &:disabled {
-        color: #999;
-        cursor: not-allowed;
-        border-color: #ddd;
-        background: #eee;
-    }
+    // &:disabled {
+    //     @extend .ynet-btn;
+    //     color: #999;
+    //     cursor: not-allowed;
+    //     border-color: #ddd;
+    //     background: #eee;
+    // }
+    // @include btn-type($default, $default);
     &-default {
+        @extend .ynet-btn;
         color: #333;
         border-color: #ddd;
         background: #fff;
         font-weight: 400;
+        &:disabled {
+            opacity: .5;
+            cursor: not-allowed;
+        }
     }
     &-success {
+        @extend .ynet-btn;
         @include btn-type($success, $success);
     }
     &-error {
+        @extend .ynet-btn;
         @include btn-type($error, $error);
     }
     &-warning {
+        @extend .ynet-btn;
         @include btn-type($warning, $warning);
     }
     &-info {
+        @extend .ynet-btn;
         @include btn-type($info, $info);
+    }
+    &-primary {
+        @extend .ynet-btn;
+        @include btn-type($primary, $primary);
+
     }
     &-small {
         padding: 0 5px;
@@ -76,14 +94,22 @@ $white: #fff;
     }
     &-large {
         padding: 0 28px;
-        font-size: 14px;
+        font-size: 18px!important;
         line-height: 38px;
         height: 40px;
     }
-    &-circle {
-        border-radius: 28px;
+    &-round {
+        border-radius: 16px;
     }
     &-rectangle {
         border-radius: 0px;
+    }
+    &-text {
+        color: $primary;
+        border: none;
+        background-color: $white;
+        &:disabled {
+            color: $info;
+        }
     }
 }

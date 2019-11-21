@@ -1,6 +1,5 @@
 import Button from './Button/Button.vue';
 import Modal from './Modal/Modal.vue';
-
 import Header from './Header/Header.vue';
 import Footer from './Footer/Footer.vue';
 import Silder from './Silder/Silder.vue';
@@ -9,7 +8,7 @@ import Container from './Container/Container.vue';
 import Icon from './Icon/Icon.vue';
 import Row from './Row/Row.vue';
 import Col from './Col/Col.vue';
-
+import Link from './Link/Link.vue';
 export {
     Button,
     Modal,
@@ -20,5 +19,5 @@ export {
     Container,
     Icon,
     Row,
-    Col,
+    Col,Link
 }

@@ -1,58 +1,43 @@
 <template>
-    <button 
-        @click="clickBtn"
-        :class="classBtn"
-        :disabled="isDisabled">
-        <slot></slot>
-    </button>
+  <button
+    type="button"
+    :class="[type?'ynet-btn-'+type:'ynet-btn-default',size?'ynet-btn-'+size:'',round?'ynet-btn-round':'']"
+  >
+    <slot></slot>
+  </button>
 </template>
 
 <script>
 export default {
-    name: 'Button',
-    display: 'Button按钮',
-    data() {
-        return {
-            preCls: 'ynet-button',
-        }
-    },
+  name: "Button",
+  display: "Button内容",
+  data() {
+    return {
+      preCls: "ynet-button"
+    };
+  },
     props: {
-        isDisabled: Boolean,
-        shape: {
-            type: String,
-            default: '',//'circle'圆角, 'rectangle'直角
-        },
-        type: {
-            type: String,
-            default: 'success',//['default',success', 'warning', 'error', 'info']
-            validator(value) {
-                let types = ['default','success', 'warning', 'error', 'info']
-                return types.includes(value) || !value
-            }
-        },
-        size: {
-            type: String,
-            default: '',//['large', 'medium', 'small']
-        }
+      isDisabled: Boolean,
+      shape: {
+          type: String,
+          default: '',//'circle'圆角, 'rectangle'直角
+      },
+      type: {
+          type: String,
+          default: 'success',//['default',success', 'warning', 'error', 'info']
+          validator(value) {
+              let types = ['default','success', 'warning', 'error', 'info']
+              return types.includes(value) || !value
+          }
+      },
+      size: {
+          type: String,
+          default: '',//['large', 'medium', 'small']
+      }
     },
-    computed: {
-        classBtn() {
-            let {preCls, type, size, shape} = this
-            let className = [
-                `${preCls}`,
-                {
-                    [`${preCls}-${type}`]: !!type,
-                    [`${preCls}-${size}`]: !!size,
-                    [`${preCls}-${shape}`]: !!shape,
-                },
-            ]
-            return className
-        }
-    },
-    methods: {
-        clickBtn(ev) {
-            this.$emit('click', ev)
-        },
-    },
-}
+    round: Boolean
+};
 </script>
+
+<style>
+</style>

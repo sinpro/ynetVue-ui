@@ -9,6 +9,7 @@ import Container from './Container/Container.vue';
 import Icon from './Icon/Icon.vue';
 import Row from './Row/Row.vue';
 import Col from './Col/Col.vue';
+import Link from './Link/Link.vue';
 
 
 export {
@@ -21,5 +22,5 @@ export {
     Container,
     Icon,
     Row,
-    Col
+    Col,Link
 }
